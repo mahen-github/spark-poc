@@ -1,0 +1,33 @@
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+.scala_dependencies
+
+# IntelliJ files
+.idea
+*.iml
+
+# building
+target
+build
+null
+tmp*
+temp*
+dist
+test-output
+
+# General
+.metadata
+.cache-main
+*.class
+*.orig
+*.log
+.DS_Store
+scalastyle-output.xml
+
+# switch to regexp syntax.
+#  syntax: regexp
+#  ^\.pc/
