@@ -31,7 +31,7 @@ class WordCount(@transient val sc: SparkContext) extends Printer {
 object WordCount extends App with Printer {
   val spark: SparkSession = SparkSession
     .builder()
-    .master("local[3]")
+    .master("spark://localhost:7077")
     .appName("WordCountExample")
     .getOrCreate()
 
@@ -57,12 +57,12 @@ object WordCount extends App with Printer {
 
   if (args.length == 0) {
     print(s"""spark-submit --name wordcount_`date +%F_%T` \
-         |--class com.mahendran.example.wordcount.WordCount 
-         |--conf spark.yarn.submit.waitAppCompletion=false 
-         |--master local[2]
-         |--queue local-testing 
-         |target/spark-poc-1.0-SNAPSHOT.jar
-         |/tmp/input/data /tmp/output""".stripMargin)
+         |--class com.mahendran.example.wordcount.WordCount \
+         |--conf spark.yarn.submit.waitAppCompletion=false \
+         |--master local \
+         |--queue local-testing \ 
+         |target/spark-poc-1.0-SNAPSHOT.jar \
+         |/tmp/input/data.txt /tmp/output""".stripMargin)
 
     throw new RuntimeException("Must provide output path")
   }
