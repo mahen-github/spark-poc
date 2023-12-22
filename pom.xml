@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <specs2.version>3.6.1</specs2.version>
         <scala.compat.version>2.12</scala.compat.version>
-        <spark.version>3.0.0</spark.version>
+        <spark.version>3.3.3</spark.version>
         <kafka-version>0-10</kafka-version>
     </properties>
     <dependencies>
